@@ -8,21 +8,21 @@ const projects = [
   {
     title: 'CodeOn',
     description: 'A powerful AI coding assistant built with CodeLlama, Ollama, and Streamlit that provides intelligent code analysis, real-time execution, and comprehensive programming guidance.',
-    image: '/screenshots/codeon.png',
+    image: '/screenshots/CodeOn.png',
     link: 'https://github.com/vippawar1104/CodeOn',
     tags: ['AI', 'CodeLlama', 'Streamlit', 'Python'],
   },
   {
     title: 'VideoMind',
     description: 'An AI-powered YouTube content analyzer that transforms video transcripts into structured learning experiences. It generates concise summaries, extracts key points, and creates follow-up questions.',
-    image: '/screenshots/videomind.png',
+    image: '/screenshots/VideoMind.png',
     link: 'https://github.com/vippawar1104/VideoMind',
     tags: ['AI', 'NLP', 'YouTube', 'Python'],
   },
   {
     title: 'PolyNote',
     description: 'An intelligent meeting summarization tool that uses AI to transcribe, analyze, and generate concise summaries of meetings, making it easier to capture and share key points.',
-    image: '/screenshots/polynote.png',
+    image: '/screenshots/PolyNote.png',
     link: 'https://github.com/vippawar1104/meeting-summarizer',
     tags: ['AI', 'NLP', 'Speech Recognition', 'Python'],
   },
@@ -70,7 +70,7 @@ const Projects = () => {
                   priority={index === 0}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = '/placeholder.png'; // Fallback image
+                    target.src = '/screenshots/CodeOn.png'; // Fallback to first image
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
