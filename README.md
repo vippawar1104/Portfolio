@@ -1,5 +1,7 @@
 # Vipul Pawar - AI Enthusiast Portfolio
 
+This is my Portfolio. I'm specialized in AI & Full-Stack Developer in LLM integration and intelligent app development. Building scalable solutions with modern technologies and cutting-edge AI capabilities.
+
 A modern, responsive portfolio website showcasing my work as an AI enthusiast and developer. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Features
