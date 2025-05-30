@@ -66,7 +66,7 @@ const Hero = () => {
               AI Enthusiast & Developer
             </span>
             <h1 className="text-5xl sm:text-7xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="relative">
                 <span className="relative z-10 text-blue-600 dark:text-blue-400 animate-pulse" style={{
                   textShadow: '0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6, 0 0 20px #3b82f6',
@@ -87,9 +87,8 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-2xl mx-auto"
           >
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Building intelligent solutions and exploring the frontiers of artificial intelligence.
-              Passionate about creating innovative AI applications that make a difference.
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl">
+              Building intelligent applications with LLMs and modern web technologies. Specializing in AI integration, vector databases, and scalable solutions.
             </p>
           </motion.div>
 

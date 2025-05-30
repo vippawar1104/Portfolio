@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const About = () => {
   const skills = [
@@ -56,7 +55,7 @@ const About = () => {
                 My Journey
               </h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                I'm passionate about creating intelligent, context-aware systems—whether it's a document analysis engine, 
+                I&apos;m passionate about creating intelligent, context-aware systems—whether it&apos;s a document analysis engine, 
                 a voice-driven app, or an AI chatbot. My work combines vector search, summarization, and real-time 
                 inference to deliver practical value in sectors like edtech and healthcare.
               </p>

@@ -61,13 +61,16 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-sm font-medium mb-4">
-            Let's Connect
+            Let&apos;s Connect
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Get in Touch
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+          <p className="text-gray-600 dark:text-gray-400 mb-8">
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          </p>
+          <p className="text-gray-600 dark:text-gray-400">
+            Let&apos;s connect and explore how we can work together to bring your ideas to life.
           </p>
         </motion.div>
 
