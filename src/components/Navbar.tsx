@@ -9,16 +9,12 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-<<<<<<< HEAD
     { name: 'Experience', href: '#experience' },
-=======
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
-<<<<<<< HEAD
   // Smooth scroll to section on the same page and close mobile menu
   const handleNavClick = (e: any, href: string) => {
     // Allow normal behavior for external links
@@ -35,37 +31,20 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-=======
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
   return (
     <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-<<<<<<< HEAD
           {/* Left spacer */}
           <div className="w-16"></div>
           
           {/* Desktop menu */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
-=======
-          <div className="flex-shrink-0">
-            <Link href="#home" className="text-2xl font-bold text-blue-600 dark:text-blue-400 animate-pulse" style={{
-              textShadow: '0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6, 0 0 20px #3b82f6',
-            }}>
-              VIP
-            </Link>
-          </div>
-          
-          {/* Desktop menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-<<<<<<< HEAD
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="relative text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden"
                 >
@@ -76,22 +55,14 @@ const Navbar = () => {
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-blue-600 group-hover:w-full transition-all duration-500 ease-out"></div>
                   {/* Glow effect */}
                   <div className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-blue-500/25"></div>
-=======
-                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {item.name}
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
                 </Link>
               ))}
             </div>
           </div>
 
-<<<<<<< HEAD
           {/* Right spacer */}
           <div className="w-16"></div>
 
-=======
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -121,13 +92,8 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-<<<<<<< HEAD
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
-=======
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
               >
                 {item.name}
               </Link>
@@ -139,8 +105,4 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar; 
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
