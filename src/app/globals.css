@@ -25,7 +25,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
   overflow-x: hidden; /* Prevent horizontal scroll on body */
 }
 
@@ -41,6 +41,6 @@ html::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
   width: 0; /* Ensure width is 0 */
   height: 0; /* Ensure height is 0 */
-=======
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e
+/*=======
+>>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e*/
 }
