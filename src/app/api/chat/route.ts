@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 
-// Use environment variable for Groq API Key
-const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
-
 export async function POST(req: Request) {
     try {
+        // Get API key from environment
+        const GROQ_API_KEY = process.env.GROQ_API_KEY;
+        
+        // Check if API key exists
+        if (!GROQ_API_KEY) {
+            console.error("GROQ_API_KEY is not configured");
+            return NextResponse.json(
+                { error: "API key not configured. Please contact the administrator." },
+                { status: 500 }
+            );
+        }
+
         const { message, context } = await req.json();
 
         const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -36,12 +45,30 @@ export async function POST(req: Request) {
             }),
         });
 
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Groq API Error:", errorData);
+            return NextResponse.json(
+                { error: `Groq API error: ${errorData.error?.message || 'Unknown error'}` },
+                { status: response.status }
+            );
+        }
+
         const data = await response.json();
+        
+        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+            console.error("Invalid response from Groq API:", data);
+            return NextResponse.json(
+                { error: "Invalid response from AI service" },
+                { status: 500 }
+            );
+        }
+
         return NextResponse.json({ content: data.choices[0].message.content });
     } catch (error) {
         console.error("Chat Error:", error);
         return NextResponse.json(
-            { error: "Failed to fetch response from AI" },
+            { error: `Failed to fetch response from AI: ${error instanceof Error ? error.message : 'Unknown error'}` },
             { status: 500 }
         );
     }

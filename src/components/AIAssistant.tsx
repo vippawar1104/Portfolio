@@ -87,15 +87,25 @@ const AIAssistant = () => {
                     ...prev,
                     { role: "assistant", content: data.content },
                 ]);
+            } else if (data.error) {
+                // Show the actual error from the API
+                setMessages((prev) => [
+                    ...prev,
+                    {
+                        role: "assistant",
+                        content: `Error: ${data.error}. Please make sure the API key is configured in Vercel environment variables.`,
+                    },
+                ]);
             } else {
                 throw new Error("No content received");
             }
         } catch (error) {
+            console.error("AI Assistant Error:", error);
             setMessages((prev) => [
                 ...prev,
                 {
                     role: "assistant",
-                    content: "Sorry, I encountered an error. Please try again later.",
+                    content: `Sorry, I encountered an error: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again later.`,
                 },
             ]);
         } finally {
