@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121212;
+  --foreground: #9ca3af;
 }
 
 @theme inline {
@@ -17,30 +17,61 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #9ca3af;
   }
 }
 
+html,
 body {
-  background: var(--background);
+  background-color: #000000;
+  background-image: radial-gradient(circle at top center,
+      #1a1a1a,
+      #0d0d0d,
+      #050505,
+      #000000);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-/*<<<<<<< HEAD*/
-  overflow-x: hidden; /* Prevent horizontal scroll on body */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overscroll-behavior-y: none;
 }
 
 /* Hide scrollbar but keep functionality */
 html {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  scroll-behavior: smooth; /* Ensure smooth scrolling is maintained */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+
+  .liquid-glass {
+    @apply bg-zinc-400/5 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .liquid-glass-accent {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
 }
 
 html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
-  width: 0; /* Ensure width is 0 */
-  height: 0; /* Ensure height is 0 */
-/*=======
->>>>>>> 30980cb65d2b8d4ba464349a520c06289df7407e*/
+  display: none;
+  width: 0;
+  height: 0;
 }
