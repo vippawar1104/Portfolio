@@ -59,7 +59,7 @@ const Hero = () => {
       {/* Animated background layers removed to show global gradient */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-          {/* Profile Image */}{" "}
+          {/* Profile Image */}
           <motion.div
             initial={{
               opacity: 0,
@@ -72,10 +72,10 @@ const Hero = () => {
             transition={{
               duration: 0.6,
             }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center lg:justify-start order-1 lg:order-1"
           >
             <div
-              className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80"
+              className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 mx-auto lg:mx-0"
               style={{ transform: `translateY(${scrollY * 0.08}px)` }}
             >
               <div className="w-full h-full rounded-[3rem] overflow-hidden border-4 border-zinc-700/50 shadow-xl transition-all duration-300 hover:border-zinc-500/40 hover:shadow-2xl hover:shadow-zinc-500/20">
@@ -95,7 +95,7 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
-          {/* Text Content */}{" "}
+          {/* Text Content */}
           <motion.div
             initial={{
               opacity: 0,
@@ -109,7 +109,7 @@ const Hero = () => {
               duration: 0.5,
               delay: 0.2,
             }}
-            className="text-center col-span-2 lg:text-left"
+            className="text-center lg:text-left col-span-1 lg:col-span-2 order-2 lg:order-2"
           >
             <div className="mb-6">
               <span className="inline-block px-4 py-2 rounded-full bg-zinc-800 text-zinc-400 text-sm font-medium mb-4">
