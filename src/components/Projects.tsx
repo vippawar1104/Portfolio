@@ -19,7 +19,7 @@ const projects = [
       "Finsight is an AI-powered personal finance tracker built with Streamlit and Python. Features user authentication, expense/income logging, interactive charts, and FinBot - an AI assistant using Cohere for budgeting advice. Uses SQLite databases and Plotly visualizations for secure, multi-user financial management.",
     image: "/screenshots/finsight.png",
     link: "https://finsight1104.streamlit.app",
-    tags: ["AI", "Streamlit", "Python", "Cohere", "Plotly", "SQLite"],
+    tags: ["Python", "Streamlit", "SQLite", "Cohere AI", "Plotly", "LangChain"],
   },
   {
     title: "PolyNote",
@@ -27,7 +27,7 @@ const projects = [
       "An intelligent meeting summarization tool that uses AI to transcribe, analyze, and generate concise summaries of meetings, making it easier to capture and share key points.",
     image: "/screenshots/PolyNote.png",
     link: "https://polynote.streamlit.app/ ",
-    tags: ["AI", "NLP", "Speech Recognition", "Python"],
+    tags: ["Python", "FastAPI", "Streamlit", "AssemblyAI", "Groq LLM", "LangChain"],
   },
   {
     title: "X Post Agent",

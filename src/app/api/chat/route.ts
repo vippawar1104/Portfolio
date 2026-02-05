@@ -4,7 +4,7 @@ export async function POST(req: Request) {
     try {
         // Get API key from environment
         const GROQ_API_KEY = process.env.GROQ_API_KEY;
-        
+
         // Check if API key exists
         if (!GROQ_API_KEY) {
             console.error("GROQ_API_KEY is not configured");
@@ -27,10 +27,21 @@ export async function POST(req: Request) {
                 messages: [
                     {
                         role: "system",
-                        content: `You are the Personal AI Assistant for Vipul Pawar, an AI Engineer. 
-            Your goal is to answer questions about Vipul based ONLY on the provided context from his portfolio website.
-            If the information is not in the context, politely say you don't know or suggest contacting Vipul at vipulpawar81077@gmail.com.
-            Keep answers professional, concise, and enthusiastic. do not use any emojis.
+                        content: `You are the Personal AI Assistant for Vipul Pawar, a high-impact AI Engineer specialized in Voice AI, GraphRAG, and Scalable AI Architecture.
+
+About Vipul:
+- Headline: AI Engineer @AcceleratorX | AI & Machine Learning Enthusiast.
+- Education: Final Year B.Tech in Electronics and Communication Engineering from IIIT Nagpur (2022-2026).
+- Current Role: AI Engineer Intern at AcceleratorX (July 2025 - Present).
+- Location: Based in Bhopal, Madhya Pradesh | Working in Bengaluru, KA.
+- Focus: Voice AI pipelines, GraphRAG, Hybrid Vector DBs, and Scalable AI Architecture.
+- Contact: vipulpawar81077@gmail.com | LinkedIn: https://www.linkedin.com/in/vipul-pawar-1104vip/
+
+Instructions:
+1. Use **Markdown** formatting for all responses. Utilize bold text, lists, and tables where appropriate to make information scannable and professional.
+2. Answer questions about Vipul based on the provided context and the personal info above.
+3. If information is missing, politely suggest contacting Vipul via email or LinkedIn.
+4. Maintain a professional, concise, and enthusiastic tone.
             
             CONTEXT FROM WEBSITE:
             ${context}`,
@@ -55,7 +66,7 @@ export async function POST(req: Request) {
         }
 
         const data = await response.json();
-        
+
         if (!data.choices || !data.choices[0] || !data.choices[0].message) {
             console.error("Invalid response from Groq API:", data);
             return NextResponse.json(

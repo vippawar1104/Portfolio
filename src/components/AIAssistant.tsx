@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const AIAssistant = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +10,7 @@ const AIAssistant = () => {
         {
             role: "assistant",
             content:
-                "Hi! I'm Vipul's Personal AI Assistant. I have full access to his portfolio data. Ask me anything about his experience, projects, or skills!",
+                "Hi! I'm Vipul's Personal AI Assistant. I have full access to his portfolio and professional background. Ask me anything about his experience, projects, or his education at **IIIT Nagpur**!",
         },
     ]);
     const [input, setInput] = useState("");
@@ -22,7 +24,7 @@ const AIAssistant = () => {
                 {
                     role: "assistant",
                     content:
-                        "Hi! I'm Vipul's Personal AI Assistant. I have full access to his portfolio data. Ask me anything about his experience, projects, or skills!",
+                        "Hi! I'm Vipul's Personal AI Assistant. I have full access to his portfolio and professional background. Ask me anything about his experience, projects, or his education at **IIIT Nagpur**!",
                 },
             ]);
             setInput("");
@@ -42,6 +44,7 @@ const AIAssistant = () => {
         const sections = [
             "home",
             "about",
+            "education",
             "experience",
             "projects",
             "skills",
@@ -169,12 +172,26 @@ const AIAssistant = () => {
                                         }`}
                                 >
                                     <div
-                                        className={`max-w-[80%] p-4 rounded-2xl ${msg.role === "user"
-                                            ? "bg-zinc-700 text-zinc-100 rounded-tr-none"
-                                            : "bg-white/5 border border-white/10 text-zinc-300 rounded-tl-none"
+                                        className={`max-w-[85%] p-4 rounded-2xl ${msg.role === "user"
+                                            ? "bg-zinc-700 text-zinc-100 rounded-tr-none shadow-lg"
+                                            : "bg-white/5 border border-white/10 text-zinc-300 rounded-tl-none shadow-xl"
                                             }`}
                                     >
-                                        <p className="text-sm leading-relaxed">{msg.content}</p>
+                                        <div className="text-sm leading-relaxed overflow-hidden prose prose-invert prose-sm max-w-none">
+                                            <ReactMarkdown
+                                                remarkPlugins={[remarkGfm]}
+                                                components={{
+                                                    p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                                                    ul: ({ children }) => <ul className="list-disc ml-4 mb-2 space-y-1">{children}</ul>,
+                                                    ol: ({ children }) => <ol className="list-decimal ml-4 mb-2 space-y-1">{children}</ol>,
+                                                    li: ({ children }) => <li className="marker:text-zinc-500">{children}</li>,
+                                                    strong: ({ children }) => <strong className="text-white font-bold">{children}</strong>,
+                                                    a: ({ node, ...props }) => <a {...props} className="text-zinc-400 underline hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" />,
+                                                }}
+                                            >
+                                                {msg.content}
+                                            </ReactMarkdown>
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}

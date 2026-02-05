@@ -105,8 +105,10 @@ const About = () => {
                 and integrating AI models into real-world solutions. Driven by
                 this passion, I started applying for internships as an AI
                 engineer, eventually securing an internship in the field. I am
-                now eager to continue advancing in the AI/ML domain and
-                contribute to innovative projects in the future.{" "}
+                currently in my final year of B.Tech in Electronics and
+                Communication Engineering at IIIT Nagpur, eager to continue
+                advancing in the AI/ML domain and contribute to innovative projects
+                in the future.{" "}
               </p>{" "}
               <p className="text-zinc-400">
                 {" "}
