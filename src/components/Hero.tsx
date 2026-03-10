@@ -80,7 +80,7 @@ const Hero = () => {
             >
               <div className="w-full h-full rounded-[3rem] overflow-hidden border-4 border-zinc-700/50 shadow-xl transition-all duration-300 hover:border-zinc-500/40 hover:shadow-2xl hover:shadow-zinc-500/20">
                 <Image
-                  src="/screenshots/Vipul2.png"
+                  src="/screenshots/vipulenhanced-modified.jpg"
                   alt="Vipul Pawar - AI Engineer"
                   fill
                   sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
