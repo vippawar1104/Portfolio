@@ -201,8 +201,9 @@ const Hero = () => {
                 />
               </button>
               <a
-                href="/screenshots/VIPUL_RESUME4.pdf"
-                download
+                href="https://drive.google.com/file/d/1D894r5gnr4BWokwbZM-mBT1Hob5sSjva/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-10 py-5 liquid-glass-accent text-zinc-300 rounded-full font-bold overflow-hidden transition-all duration-300 hover:shadow-zinc-500/30 hover:scale-105 hover:-translate-y-1 border border-zinc-700 hover:border-zinc-500"
               >
                 <svg
@@ -226,9 +227,7 @@ const Hero = () => {
         </div>
         {/* Scroll indicator */}{" "}
         <motion.div
-          initial={{
-            opacity: 0,
-          }}
+          initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
           }}
@@ -237,16 +236,7 @@ const Hero = () => {
           }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-            }}
-            className="w-6 h-10 border-2 border-zinc-400 rounded-full flex justify-center"
-          >
+          <div className="w-6 h-10 border-2 border-zinc-400 rounded-full flex justify-center">
             <motion.div
               animate={{
                 y: [0, 10, 0],
@@ -257,7 +247,7 @@ const Hero = () => {
               }}
               className="w-1 h-2 bg-zinc-400 rounded-full mt-2"
             />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
