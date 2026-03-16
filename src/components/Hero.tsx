@@ -201,6 +201,43 @@ const Hero = () => {
                 />
               </button>
             </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.6,
+              }}
+              className="flex justify-center lg:justify-start mt-6"
+            >
+              <a
+                href="/screenshots/VIPUL_RESUME4.pdf"
+                download
+                className="group flex items-center gap-2 px-6 py-3 bg-zinc-800 text-zinc-200 rounded-full font-semibold shadow hover:bg-zinc-700 hover:text-white transition-all duration-300 border border-zinc-700 hover:border-zinc-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 4.5v15m0 0l-6-6m6 6l6-6"
+                  />
+                </svg>
+                Download Resume
+              </a>
+            </motion.div>
           </motion.div>
         </div>
         {/* Scroll indicator */}{" "}
