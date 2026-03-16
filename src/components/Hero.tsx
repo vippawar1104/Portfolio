@@ -200,26 +200,10 @@ const Hero = () => {
                   }}
                 />
               </button>
-            </motion.div>
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.6,
-              }}
-              className="flex justify-center lg:justify-start mt-6"
-            >
               <a
                 href="/screenshots/VIPUL_RESUME4.pdf"
                 download
-                className="group flex items-center gap-2 px-6 py-3 bg-zinc-800 text-zinc-200 rounded-full font-semibold shadow hover:bg-zinc-700 hover:text-white transition-all duration-300 border border-zinc-700 hover:border-zinc-500"
+                className="group flex items-center gap-2 px-10 py-5 liquid-glass-accent text-zinc-300 rounded-full font-bold overflow-hidden transition-all duration-300 hover:shadow-zinc-500/30 hover:scale-105 hover:-translate-y-1 border border-zinc-700 hover:border-zinc-500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
