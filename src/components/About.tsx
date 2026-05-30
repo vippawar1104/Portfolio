@@ -271,9 +271,9 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 p-4 rounded-lg hover:bg-white/5 ">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/20 p-4 rounded-lg hover:bg-orange-500/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6">
+                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-orange-500/20 group-hover:text-orange-400 group-hover:shadow-lg group-hover:shadow-orange-500/30">
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -292,7 +292,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-orange-300 transition-colors">
                       {" "}
                       Automation & Integration{" "}
                     </h4>{" "}

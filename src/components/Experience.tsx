@@ -138,15 +138,15 @@ const Experience = () => {
                 </div>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-zinc-300 tracking-tight">AI Engineer</h2>
-                <p className="text-zinc-500 font-medium">AcceleratorX • <span className="text-zinc-600">Internship</span> • <span className="italic text-zinc-600">Bengaluru, KA</span></p>
+                <h2 className="text-3xl font-bold text-slate-200 tracking-tight">AI Engineer</h2>
+                <p className="text-slate-400 font-medium">AcceleratorX • <span className="text-slate-500">Internship</span> • <span className="italic text-slate-500">Bengaluru, KA</span></p>
               </div>
             </div>
 
             <div className="flex flex-col items-start md:items-end gap-2">
-              <span className="text-xs font-bold text-zinc-500 uppercase tracking-[0.3em]">Timeline</span>
-              <div className="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 text-sm font-semibold">
-                July 2025 — Present
+              <span className="text-xs font-bold text-indigo-400 uppercase tracking-[0.3em]">Timeline</span>
+              <div className="px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-semibold">
+                July 2025 — May 2026
               </div>
             </div>
           </motion.div>
