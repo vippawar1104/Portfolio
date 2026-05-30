@@ -174,9 +174,9 @@ const About = () => {
               </h3>{" "}
               <div className="space-y-4">
                 {" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 p-4 rounded-lg hover:bg-white/5 ">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 p-4 rounded-lg hover:bg-blue-500/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6">
+                  <div className="p-3 bg-blue-500/20 text-blue-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-500/30 group-hover:shadow-lg group-hover:shadow-blue-500/30">
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -195,7 +195,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-blue-300 transition-colors">
                       {" "}
                       AI-Powered Solutions{" "}
                     </h4>{" "}
@@ -206,9 +206,9 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 p-4 rounded-lg hover:bg-white/5 ">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/20 p-4 rounded-lg hover:bg-purple-500/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6">
+                  <div className="p-3 bg-purple-500/20 text-purple-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-purple-500/30 group-hover:shadow-lg group-hover:shadow-purple-500/30">
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -227,7 +227,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-purple-300 transition-colors">
                       {" "}
                       Industry Applications{" "}
                     </h4>{" "}
@@ -239,9 +239,9 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-black/50 p-4 rounded-lg hover:bg-white/5 ">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/20 p-4 rounded-lg hover:bg-emerald-500/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-6">
+                  <div className="p-3 bg-emerald-500/20 text-emerald-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-emerald-500/30 group-hover:shadow-lg group-hover:shadow-emerald-500/30">
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -260,7 +260,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-emerald-300 transition-colors">
                       {" "}
                       Scalable Architecture{" "}
                     </h4>{" "}
@@ -273,7 +273,7 @@ const About = () => {
                 </div>{" "}
                 <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/20 p-4 rounded-lg hover:bg-orange-500/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-orange-500/20 group-hover:text-orange-400 group-hover:shadow-lg group-hover:shadow-orange-500/30">
+                  <div className="p-3 bg-orange-500/20 text-orange-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-orange-500/30 group-hover:shadow-lg group-hover:shadow-orange-500/30">
                     {" "}
                     <svg
                       className="w-6 h-6"
