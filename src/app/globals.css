@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #121212;
-  --foreground: #9ca3af;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
 }
 
 @theme inline {
@@ -16,19 +18,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #9ca3af;
+    --background: #0f172a;
+    --foreground: #e2e8f0;
   }
 }
 
 html,
 body {
-  background-color: #000000;
-  background-image: radial-gradient(circle at top center,
-      #1a1a1a,
-      #0d0d0d,
-      #050505,
-      #000000);
+  background-color: #0f172a;
+  background-image: linear-gradient(to bottom right,
+      #0f172a,
+      #1e293b,
+      #0f172a);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
@@ -59,13 +60,13 @@ html {
   }
 
   .liquid-glass {
-    @apply bg-zinc-400/5 backdrop-blur-xl border border-white/10;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    @apply bg-slate-800/30 backdrop-blur-xl border border-indigo-500/20;
+    box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.1);
   }
 
   .liquid-glass-accent {
-    @apply bg-white/10 backdrop-blur-2xl border border-white/20;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    @apply bg-indigo-500/10 backdrop-blur-2xl border border-indigo-400/30;
+    box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.2);
   }
 }
 
