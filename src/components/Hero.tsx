@@ -210,7 +210,7 @@ const Hero = () => {
                 />
               </button>
               <a
-                href="https://drive.google.com/file/d/1D894r5gnr4BWokwbZM-mBT1Hob5sSjva/view?usp=sharing"
+                href="https://drive.google.com/file/d/18fx-LA23JEDeRCDj0T4DKXDUd_APAdwI/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-10 py-5 liquid-glass-accent text-zinc-300 rounded-full font-bold overflow-hidden transition-all duration-300 hover:shadow-zinc-500/30 hover:scale-105 hover:-translate-y-1 border border-zinc-700 hover:border-zinc-500"
