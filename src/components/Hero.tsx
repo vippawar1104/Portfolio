@@ -78,9 +78,9 @@ const Hero = () => {
               className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 mx-auto lg:mx-0"
               style={{ transform: `translateY(${scrollY * 0.08}px)` }}
             >
-              <div className="w-full h-full rounded-[3rem] overflow-hidden border-4 border-zinc-700/50 shadow-xl transition-all duration-300 hover:border-zinc-500/40 hover:shadow-2xl hover:shadow-zinc-500/20">
+              <div className="w-full h-full rounded-[3rem] overflow-hidden border-4 border-indigo-500/30 shadow-xl transition-all duration-300 hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-500/20">
                 <Image
-                  src="/screenshots/vipulenhanced-modified.jpg"
+                  src="/screenshots/Gemini_Generated_Image_3u6xke3u6xke3u6x.png"
                   alt="Vipul Pawar - AI Engineer"
                   fill
                   sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
@@ -92,6 +92,15 @@ const Hero = () => {
                       "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMzc0MTUxIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ObyBJbWFnZTwvdGV4dD4KPC9zdmc+";
                   }}
                 />
+                {/* Commented out old black and white image */}
+                {/* <Image
+                  src="/screenshots/vipulenhanced-modified.jpg"
+                  alt="Vipul Pawar - AI Engineer (B&W)"
+                  fill
+                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+                  className="object-cover rounded-[2.8rem]"
+                  priority
+                /> */}
               </div>
             </div>
           </motion.div>

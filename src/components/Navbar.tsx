@@ -39,11 +39,32 @@ const Navbar = () => {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="relative text-zinc-400 hover:text-zinc-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden"
+                    className={`relative text-zinc-400 hover:text-zinc-300 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1 group overflow-hidden
+                      ${item.name === 'Home' ? 'hover:text-blue-400' : ''}
+                      ${item.name === 'About' ? 'hover:text-purple-400' : ''}
+                      ${item.name === 'Experience' ? 'hover:text-emerald-400' : ''}
+                      ${item.name === 'Projects' ? 'hover:text-orange-400' : ''}
+                      ${item.name === 'Skills' ? 'hover:text-pink-400' : ''}
+                      ${item.name === 'Contact' ? 'hover:text-cyan-400' : ''}
+                    `}
                   >
                     <span className="relative z-10">{item.name}</span>
-                    <div className="absolute inset-0 bg-white/5 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-zinc-600 group-hover:w-full transition-all duration-500 ease-out"></div>
+                    <div className={`absolute inset-0 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out
+                      ${item.name === 'Home' ? 'bg-blue-500/10' : ''}
+                      ${item.name === 'About' ? 'bg-purple-500/10' : ''}
+                      ${item.name === 'Experience' ? 'bg-emerald-500/10' : ''}
+                      ${item.name === 'Projects' ? 'bg-orange-500/10' : ''}
+                      ${item.name === 'Skills' ? 'bg-pink-500/10' : ''}
+                      ${item.name === 'Contact' ? 'bg-cyan-500/10' : ''}
+                    `}></div>
+                    <div className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-500 ease-out
+                      ${item.name === 'Home' ? 'bg-blue-500' : ''}
+                      ${item.name === 'About' ? 'bg-purple-500' : ''}
+                      ${item.name === 'Experience' ? 'bg-emerald-500' : ''}
+                      ${item.name === 'Projects' ? 'bg-orange-500' : ''}
+                      ${item.name === 'Skills' ? 'bg-pink-500' : ''}
+                      ${item.name === 'Contact' ? 'bg-cyan-500' : ''}
+                    `}></div>
                   </Link>
                 ))}
               </div>
@@ -105,7 +126,14 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-zinc-400 hover:text-zinc-300 block px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 hover:bg-white/5 active:bg-white/10"
+              className={`text-zinc-400 hover:text-zinc-300 block px-4 py-3 rounded-2xl text-base font-medium transition-all duration-300 active:bg-white/10
+                ${item.name === 'Home' ? 'hover:bg-blue-500/10 hover:text-blue-400' : ''}
+                ${item.name === 'About' ? 'hover:bg-purple-500/10 hover:text-purple-400' : ''}
+                ${item.name === 'Experience' ? 'hover:bg-emerald-500/10 hover:text-emerald-400' : ''}
+                ${item.name === 'Projects' ? 'hover:bg-orange-500/10 hover:text-orange-400' : ''}
+                ${item.name === 'Skills' ? 'hover:bg-pink-500/10 hover:text-pink-400' : ''}
+                ${item.name === 'Contact' ? 'hover:bg-cyan-500/10 hover:text-cyan-400' : ''}
+              `}
               style={{
                 animation: isOpen
                   ? `slideIn 0.3s ease-out ${index * 0.05}s forwards`

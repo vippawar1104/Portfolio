@@ -113,7 +113,7 @@ const Experience = () => {
   const [selectedAchievement, setSelectedAchievement] = useState<typeof achievements[0] | null>(null);
 
   return (
-    <section id="experience" className="py-24 bg-[#050505] relative">
+    <section id="experience" className="py-24 liquid-glass relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header / Company Info */}
