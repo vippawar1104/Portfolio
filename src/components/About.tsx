@@ -2,6 +2,29 @@
 import { motion } from "framer-motion";
 
 const About = () => {
+  const milestones = [
+    {
+      label: "The Spark",
+      detail:
+        "SIH 2024 — my team's problem statement was rooted in machine learning, and that experience ignited my fascination with AI/ML.",
+    },
+    {
+      label: "Building Momentum",
+      detail:
+        "Cleared the initial college rounds of SIH 2024 and dove deeper into AI/ML projects, then expanded into workflow automation with n8n — automating complex processes and integrating AI models into real-world solutions.",
+    },
+    {
+      label: "Turning Passion into Career",
+      detail:
+        "Started applying for AI engineering internships, and secured one in the field.",
+    },
+    {
+      label: "Today",
+      detail:
+        "Final-year B.Tech in Electronics & Communication Engineering at IIIT Nagpur, focused on AI/ML integration, embedded intelligence, and scalable neural architectures.",
+    },
+  ];
+
   const tools = [
     {
       name: "n8n",
@@ -53,9 +76,10 @@ const About = () => {
           className="text-center mb-16"
         >
           {" "}
-          <span className="inline-block px-4 py-2 rounded-full bg-zinc-800 text-zinc-400 text-sm font-medium mb-4">
-            {" "}
-            About Me{" "}
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md border border-white/15 bg-white/[0.03] text-zinc-300 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            <span className="text-zinc-600">[</span>
+            About Me
+            <span className="text-zinc-600">]</span>
           </span>{" "}
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-300 mb-4">
             {" "}
@@ -94,23 +118,23 @@ const About = () => {
                 {" "}
                 My Journey{" "}
               </h3>{" "}
-              <p className="text-zinc-400 mb-4">
-                {" "}
-                My journey into AI and ML began during SIH 2024, where our
-                problem statement was rooted in machine learning. This
-                experience sparked my fascination with the field, and after
-                clearing the initial college rounds of SIH 2024, I dove deeper
-                into building projects in AI and ML. I soon expanded my skills
-                to workflow automation using n8n, automating complex processes
-                and integrating AI models into real-world solutions. Driven by
-                this passion, I started applying for internships as an AI
-                engineer, eventually securing an internship in the field. I am
-                currently in my final year of B.Tech in Electronics and
-                Communication Engineering at IIIT Nagpur, eager to continue
-                advancing in the AI/ML domain and contribute to innovative projects
-                in the future.{" "}
-              </p>{" "}
-              <p className="text-zinc-400">
+              <div className="space-y-5 mb-6">
+                {milestones.map((milestone, index) => (
+                  <div key={milestone.label} className="relative pl-6">
+                    {index !== milestones.length - 1 && (
+                      <span className="absolute left-[3px] top-3 bottom-[-1.25rem] w-px bg-white/10" />
+                    )}
+                    <span className="absolute left-0 top-1.5 w-[7px] h-[7px] rounded-full bg-zinc-400" />
+                    <h4 className="text-sm font-bold uppercase tracking-[0.15em] text-zinc-200 mb-1.5">
+                      {milestone.label}
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      {milestone.detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-zinc-400 border-t border-white/10 pt-4">
                 {" "}
                 I specialize in building scalable, AI-powered solutions using
                 cutting-edge tools and APIs, focusing on creating practical
@@ -174,9 +198,12 @@ const About = () => {
               </h3>{" "}
               <div className="space-y-4">
                 {" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 p-4 rounded-lg hover:bg-blue-500/5 group">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 p-4 rounded-lg hover:bg-white/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-blue-500/20 group-hover:text-blue-400 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+                  <div
+                    className="p-3 bg-gradient-to-br from-zinc-700/60 to-zinc-800/40 text-zinc-300 rounded-2xl shadow-[0_0_18px_rgba(255,255,255,0.08)] transition-all duration-300 animate-float-slow group-hover:scale-110 group-hover:rotate-6 group-hover:bg-zinc-700/70 group-hover:text-zinc-100 group-hover:shadow-lg group-hover:shadow-white/20"
+                    style={{ animationDelay: "0s" }}
+                  >
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -195,7 +222,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-blue-300 transition-colors">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-zinc-100 transition-colors">
                       {" "}
                       AI-Powered Solutions{" "}
                     </h4>{" "}
@@ -206,9 +233,12 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/20 p-4 rounded-lg hover:bg-purple-500/5 group">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 p-4 rounded-lg hover:bg-white/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-purple-500/20 group-hover:text-purple-400 group-hover:shadow-lg group-hover:shadow-purple-500/30">
+                  <div
+                    className="p-3 bg-gradient-to-br from-neutral-700/60 to-neutral-800/40 text-zinc-300 rounded-2xl shadow-[0_0_18px_rgba(255,255,255,0.1)] transition-all duration-300 animate-float-slow group-hover:scale-110 group-hover:rotate-6 group-hover:bg-neutral-700/70 group-hover:text-zinc-100 group-hover:shadow-lg group-hover:shadow-white/20"
+                    style={{ animationDelay: "0.4s" }}
+                  >
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -227,7 +257,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-purple-300 transition-colors">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-zinc-100 transition-colors">
                       {" "}
                       Industry Applications{" "}
                     </h4>{" "}
@@ -239,9 +269,12 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-emerald-500/20 p-4 rounded-lg hover:bg-emerald-500/5 group">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 p-4 rounded-lg hover:bg-white/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 group-hover:shadow-lg group-hover:shadow-emerald-500/30">
+                  <div
+                    className="p-3 bg-gradient-to-br from-zinc-800/60 to-zinc-900/40 text-zinc-300 rounded-2xl shadow-[0_0_18px_rgba(255,255,255,0.06)] transition-all duration-300 animate-float-slow group-hover:scale-110 group-hover:rotate-6 group-hover:bg-zinc-800/70 group-hover:text-zinc-100 group-hover:shadow-lg group-hover:shadow-white/20"
+                    style={{ animationDelay: "0.8s" }}
+                  >
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -260,7 +293,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-emerald-300 transition-colors">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-zinc-100 transition-colors">
                       {" "}
                       Scalable Architecture{" "}
                     </h4>{" "}
@@ -271,9 +304,12 @@ const About = () => {
                     </p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/20 p-4 rounded-lg hover:bg-orange-500/5 group">
+                <div className="flex items-start space-x-4 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-white/10 p-4 rounded-lg hover:bg-white/5 group">
                   {" "}
-                  <div className="p-3 bg-zinc-800 text-zinc-400 rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-orange-500/20 group-hover:text-orange-400 group-hover:shadow-lg group-hover:shadow-orange-500/30">
+                  <div
+                    className="p-3 bg-gradient-to-br from-stone-700/60 to-stone-800/40 text-zinc-300 rounded-2xl shadow-[0_0_18px_rgba(255,255,255,0.09)] transition-all duration-300 animate-float-slow group-hover:scale-110 group-hover:rotate-6 group-hover:bg-stone-700/70 group-hover:text-zinc-100 group-hover:shadow-lg group-hover:shadow-white/20"
+                    style={{ animationDelay: "1.2s" }}
+                  >
                     {" "}
                     <svg
                       className="w-6 h-6"
@@ -292,7 +328,7 @@ const About = () => {
                   </div>{" "}
                   <div>
                     {" "}
-                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-orange-300 transition-colors">
+                    <h4 className="text-lg font-semibold text-zinc-300 mb-2 group-hover:text-zinc-100 transition-colors">
                       {" "}
                       Automation & Integration{" "}
                     </h4>{" "}

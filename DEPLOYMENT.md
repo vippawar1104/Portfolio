@@ -10,15 +10,15 @@
 5. Vercel will auto-detect Next.js configuration
 
 ### Step 2: Add Environment Variable
-**IMPORTANT:** Before deploying, add your Groq API key:
+**IMPORTANT:** Before deploying, add your Gemini API key:
 
 1. In the Vercel project settings, go to **"Environment Variables"**
 2. Add the following variable:
-   - **Key:** `GROQ_API_KEY`
-   - **Value:** `[Your Groq API Key from https://console.groq.com]`
+   - **Key:** `GEMINI_API_KEY`
+   - **Value:** `[Your Gemini API Key from https://aistudio.google.com/apikey]`
    - **Environment:** Production, Preview, and Development
 
-**Note:** Get your API key from https://console.groq.com/keys
+**Note:** Get your API key from https://aistudio.google.com/apikey
 
 ### Step 3: Deploy
 1. Click **"Deploy"**
@@ -42,7 +42,7 @@ vercel --prod
 
 ## After Deployment
 
-Your AI Assistant chatbot will work with the Groq API key configured in Vercel environment variables.
+Your AI Assistant chatbot will work with the Gemini API key configured in Vercel environment variables.
 
 **GitHub Repo:** https://github.com/vippawar1104/Portfolio
 
@@ -51,4 +51,4 @@ Your AI Assistant chatbot will work with the Groq API key configured in Vercel e
 ✅ Liquid-glass effects
 ✅ Comprehensive experience details
 ✅ Updated skills (removed Flutter/Dart, added Streamlit/FastAPI)
-✅ AI Assistant powered by Llama 3.3 70B via Groq
+✅ AI Assistant powered by Google Gemini

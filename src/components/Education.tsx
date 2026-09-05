@@ -24,8 +24,10 @@ const Education = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-block px-4 py-2 rounded-full bg-zinc-800 text-zinc-400 text-sm font-medium mb-4">
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md border border-white/15 bg-white/[0.03] text-zinc-300 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+                        <span className="text-zinc-600">[</span>
                         Academic Background
+                        <span className="text-zinc-600">]</span>
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-bold text-zinc-300 mb-4">
                         Education
@@ -41,9 +43,6 @@ const Education = () => {
                             viewport={{ once: true }}
                             className="group relative liquid-glass rounded-[2.5rem] p-8 md:p-12 transition-all duration-500 hover:bg-zinc-900/40 border border-white/5 overflow-hidden shadow-2xl"
                         >
-                            {/* Accent Glow */}
-                            <div className="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl group-hover:bg-emerald-500/10 transition-all duration-700" />
-
                             <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-start">
                                 {/* Logo Section */}
                                 <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 bg-white/5 rounded-[2rem] p-4 border border-white/10 shadow-inner flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
@@ -51,7 +50,7 @@ const Education = () => {
                                         src={item.logo}
                                         alt={item.college}
                                         fill
-                                        className="object-contain p-4 grayscale brightness-125 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+                                        className="object-contain p-4"
                                     />
                                 </div>
 
@@ -64,7 +63,7 @@ const Education = () => {
                                                     {item.college}
                                                 </h3>
                                                 {item.status && (
-                                                    <span className="px-3 py-1 bg-emerald-500/10 text-emerald-500 text-[10px] font-black uppercase tracking-widest border border-emerald-500/20 rounded-full animate-pulse">
+                                                    <span className="px-3 py-1 bg-white/10 text-zinc-200 text-[10px] font-black uppercase tracking-widest border border-white/20 rounded-full animate-pulse font-mono">
                                                         {item.status}
                                                     </span>
                                                 )}
@@ -76,7 +75,7 @@ const Education = () => {
 
                                         <div className="flex flex-col md:items-end text-left md:text-right flex-shrink-0">
                                             <div className="px-5 py-2 bg-zinc-900 border border-zinc-800 rounded-2xl shadow-xl">
-                                                <span className="text-zinc-200 font-bold tracking-widest text-sm">
+                                                <span className="text-zinc-200 font-bold tracking-widest text-sm font-mono">
                                                     {item.duration}
                                                 </span>
                                             </div>

@@ -6,7 +6,13 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-bricolage)", "Arial", "Helvetica", "sans-serif"],
+        heading: ["var(--font-bricolage)", "Arial", "Helvetica", "sans-serif"],
+        mono: ["var(--font-bricolage)", "Arial", "Helvetica", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 } 

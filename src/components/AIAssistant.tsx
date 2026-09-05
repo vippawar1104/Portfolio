@@ -136,7 +136,7 @@ const AIAssistant = () => {
                     >
                         <div className="p-6 border-b border-white/10 flex items-center justify-between bg-white/5">
                             <div className="flex items-center gap-3">
-                                <div className="w-3 h-3 rounded-full bg-zinc-400 animate-pulse" />
+                                <div className="w-3 h-3 rounded-full bg-white animate-pulse" />
                                 <h3 className="text-zinc-200 font-bold">Vipul's AI Assistant</h3>
                             </div>
                             <button
@@ -244,7 +244,7 @@ const AIAssistant = () => {
                                 </button>
                             </div>
                             <p className="text-[10px] text-zinc-600 mt-3 text-center uppercase tracking-widest font-bold">
-                                Llama-Powered Assistant (Groq Cloud)
+                                Powered by Google Gemini
                             </p>
                         </div>
                     </motion.div>

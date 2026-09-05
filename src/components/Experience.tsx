@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
@@ -58,7 +58,79 @@ const XIcon = () => (
   </svg>
 );
 
-const achievements = [
+const RefreshIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+    <path d="M21 12a9 9 0 1 1-3-6.7" />
+    <path d="M21 3v6h-6" />
+  </svg>
+);
+
+const DatabaseIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+    <ellipse cx="12" cy="5" rx="9" ry="3" />
+    <path d="M3 5v14a9 3 0 0 0 18 0V5" />
+    <path d="M3 12a9 3 0 0 0 18 0" />
+  </svg>
+);
+
+const CloudIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z" />
+  </svg>
+);
+
+const mysiviAchievements = [
+  {
+    id: "mysivi-voice-arch",
+    title: "Unified Voice AI Architecture",
+    app: "Lovish Voice • 60+ Characters",
+    impact: "60+ Characters, 1 Pipeline",
+    tagline: "One real-time voice architecture powering every AI character.",
+    fullDescription: "Designed and built a single, reusable real-time Voice AI architecture for Lovish AI (MySivi's AI companion app, 1M+ downloads) that powers natural voice conversations across all 60+ distinct AI characters in the app — each with its own persona and voice — without duplicating pipeline infrastructure per character. Integrated Gemini Live for low-latency, natural real-time voice interaction.",
+    icon: <MicIcon />,
+    color: "blue",
+    tools: ["Python", "Gemini Live", "WebSockets", "Voice AI"],
+    stats: "60+ Characters"
+  },
+  {
+    id: "mysivi-session",
+    title: "Session Resumption & Context Compression",
+    app: "Voice Reliability",
+    impact: "Increased App Time",
+    tagline: "Long-running voice conversations that pick up where they left off.",
+    fullDescription: "Implemented session resumption so interrupted voice conversations could pick up exactly where users left off, alongside a context-window compression method that preserved conversational memory across long-running character chats without exceeding model context limits. Added inactivity nudges to proactively re-engage idle users — together, these measurably increased user time spent on the app.",
+    icon: <RefreshIcon />,
+    color: "emerald",
+    tools: ["Session Mgmt", "Context Compression", "Gemini Live"],
+    stats: "Higher Retention"
+  },
+  {
+    id: "mysivi-data",
+    title: "Transcript Research Pipeline",
+    app: "Data Infrastructure",
+    impact: "Full Transcript Logging",
+    tagline: "Persisted every voice conversation for research and QA.",
+    fullDescription: "Connected the voice pipeline to a database backend to capture and store complete conversation transcripts for research purposes, enabling systematic analysis of character behavior, conversation quality, and model performance over time.",
+    icon: <DatabaseIcon />,
+    color: "purple",
+    tools: ["Python", "Database", "Data Pipeline"],
+    stats: "Research-Ready Data"
+  },
+  {
+    id: "mysivi-aws",
+    title: "AWS Bedrock & Premium Monetization",
+    app: "Lovish Voice • Premium",
+    impact: "Coin-Based Monetization",
+    tagline: "Production model hosting behind a paid, coin-gated voice feature.",
+    fullDescription: "Managed AWS Bedrock infrastructure for hosting the LLMs powering Lovish's text chat, while Lovish Voice was positioned as a premium capability gated behind in-app coins — directly tying the voice architecture to both user engagement and monetization.",
+    icon: <CloudIcon />,
+    color: "orange",
+    tools: ["AWS Bedrock", "Cloud Infra", "Monetization"],
+    stats: "Premium Feature"
+  }
+];
+
+const acceleratorxAchievements = [
   {
     id: "voice-ai",
     title: "Voice AI Pipeline",
@@ -109,121 +181,165 @@ const achievements = [
   }
 ];
 
+const experiences = [
+  {
+    id: "mysivi",
+    company: "MySivi AI",
+    role: "AI Engineer",
+    location: "Bengaluru, KA",
+    duration: "July 2026 — Present",
+    logo: "/screenshots/mysivi_logo.png",
+    badges: ["Internship", "10M+ Downloads", "YC W22"],
+    achievements: mysiviAchievements,
+  },
+  {
+    id: "acceleratorx",
+    company: "AcceleratorX",
+    role: "AI Engineer",
+    location: "Bengaluru, KA",
+    duration: "July 2025 — July 2026",
+    logo: "/screenshots/acceleratorxorg_logo.jpeg",
+    badges: ["Internship"],
+    achievements: acceleratorxAchievements,
+  },
+];
+
 const Experience = () => {
-  const [selectedAchievement, setSelectedAchievement] = useState<typeof achievements[0] | null>(null);
+  const [selectedAchievement, setSelectedAchievement] = useState<typeof acceleratorxAchievements[0] | null>(null);
+
+  useEffect(() => {
+    if (!selectedAchievement) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedAchievement(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedAchievement]);
 
   return (
-    <section id="experience" className="py-24 liquid-glass relative">
+    <section id="experience" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header / Company Info */}
-        <div className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-zinc-900"
-          >
-            <div className="flex items-center gap-6">
-              <div className="relative">
-                <div className="absolute inset-0 bg-zinc-400/10 blur-2xl rounded-full" />
-                <div className="relative w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center p-3 overflow-hidden group hover:border-purple-500/30 hover:shadow-[0_0_20px_rgba(168,85,247,0.15)] transition-all duration-500">
-                  <Image
-                    src="/screenshots/acceleratorxorg_logo.jpeg"
-                    alt="Logo"
-                    width={40}
-                    height={40}
-                    className="object-contain grayscale brightness-125 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500 scale-110"
-                  />
+        {experiences.map((exp, expIdx) => (
+          <div key={exp.id} className={expIdx > 0 ? "mt-16" : ""}>
+            {/* Header / Company Info */}
+            <div className="mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-zinc-900"
+              >
+                <div className="flex items-center gap-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-zinc-400/10 blur-2xl rounded-full" />
+                    <div className="relative w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center p-3 overflow-hidden group hover:border-zinc-600 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-500">
+                      <Image
+                        src={exp.logo}
+                        alt={exp.company}
+                        width={40}
+                        height={40}
+                        className="object-contain transition-all duration-500 scale-110"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold text-zinc-200 tracking-tight">{exp.role}</h2>
+                    <p className="text-zinc-400 font-medium">{exp.company} • <span className="italic text-zinc-500">{exp.location}</span></p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {exp.badges.map((badge) => (
+                        <span key={badge} className="px-2.5 py-1 rounded-full bg-white/10 border border-white/15 text-zinc-300 text-[10px] font-bold uppercase tracking-wider font-mono">
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-200 tracking-tight">AI Engineer</h2>
-                <p className="text-slate-400 font-medium">AcceleratorX • <span className="text-slate-500">Internship</span> • <span className="italic text-slate-500">Bengaluru, KA</span></p>
-              </div>
+
+                <div className="flex flex-col items-start md:items-end gap-2">
+                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-[0.3em] font-mono">Timeline</span>
+                  <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/15 text-zinc-200 text-sm font-semibold font-mono">
+                    {exp.duration}
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
-            <div className="flex flex-col items-start md:items-end gap-2">
-              <span className="text-xs font-bold text-indigo-400 uppercase tracking-[0.3em]">Timeline</span>
-              <div className="px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-semibold">
-                July 2025 — May 2026
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* The "Box Box" Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {achievements.map((item, idx) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1, duration: 0.4 }}
-              viewport={{ once: true }}
-              onClick={() => setSelectedAchievement(item)}
-              className="group relative flex flex-col h-full liquid-glass rounded-[2.5rem] p-7 transition-all duration-500 hover:bg-zinc-900/40 hover:border-zinc-800 active:scale-[0.98] cursor-pointer overflow-hidden"
-            >
-              {/* Box Overlay Indicator */}
-              <div className="mb-10 flex items-center justify-between">
-                <div
-                  className={`w-14 h-14 rounded-3xl bg-zinc-950 border border-zinc-900 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 text-zinc-400 shadow-inner
-                    ${item.color === 'blue' ? 'group-hover:bg-blue-500/10 group-hover:border-blue-500/20 group-hover:text-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]' :
-                      item.color === 'emerald' ? 'group-hover:bg-emerald-500/10 group-hover:border-emerald-500/20 group-hover:text-emerald-400 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]' :
-                        item.color === 'purple' ? 'group-hover:bg-purple-500/10 group-hover:border-purple-500/20 group-hover:text-purple-400 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]' :
-                          item.color === 'orange' ? 'group-hover:bg-orange-500/10 group-hover:border-orange-500/20 group-hover:text-orange-400 group-hover:shadow-[0_0_20px_rgba(249,115,22,0.15)]' :
-                            'group-hover:bg-zinc-800 group-hover:border-zinc-700 group-hover:text-zinc-200'}
-                  `}
+            {/* The "Box Box" Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {exp.achievements.map((item, idx) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1, duration: 0.4 }}
+                  viewport={{ once: true }}
+                  onClick={() => setSelectedAchievement(item)}
+                  className="group relative flex flex-col h-full liquid-glass rounded-[2.5rem] p-7 transition-all duration-500 hover:bg-zinc-900/40 hover:border-zinc-800 active:scale-[0.98] cursor-pointer overflow-hidden"
                 >
-                  {item.icon}
-                </div>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className={`p-2 rounded-full transition-colors 
-                    ${item.color === 'blue' ? 'bg-blue-500/10 text-blue-400 hover:bg-blue-400 hover:text-white' :
-                      item.color === 'emerald' ? 'bg-emerald-500/10 text-emerald-400 hover:bg-emerald-400 hover:text-white' :
-                        item.color === 'purple' ? 'bg-purple-500/10 text-purple-400 hover:bg-purple-400 hover:text-white' :
-                          item.color === 'orange' ? 'bg-orange-500/10 text-orange-400 hover:bg-orange-500 hover:text-white' :
-                            'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'}
-                  `}>
-                    <ArrowUpRight />
+                  {/* Box Overlay Indicator */}
+                  <div className="mb-10 flex items-center justify-between">
+                    <div
+                      className={`w-14 h-14 rounded-3xl border flex items-center justify-center transition-all duration-500 animate-float-slow group-hover:scale-110 group-hover:rotate-6 shadow-inner
+                        ${item.color === 'blue' ? 'bg-gradient-to-br from-zinc-700/50 to-zinc-800/20 border-zinc-700/40 text-zinc-300 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-zinc-700/50 group-hover:border-zinc-600/50 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]' :
+                          item.color === 'emerald' ? 'bg-gradient-to-br from-neutral-700/50 to-neutral-800/20 border-neutral-700/40 text-zinc-300 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-neutral-700/50 group-hover:border-neutral-600/50 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]' :
+                            item.color === 'purple' ? 'bg-gradient-to-br from-stone-700/50 to-stone-800/20 border-stone-700/40 text-zinc-300 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-stone-700/50 group-hover:border-stone-600/50 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]' :
+                              item.color === 'orange' ? 'bg-gradient-to-br from-zinc-600/40 to-zinc-800/20 border-zinc-600/40 text-zinc-300 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-zinc-600/50 group-hover:border-zinc-500/50 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]' :
+                                'bg-zinc-950 border-zinc-900 text-zinc-400 group-hover:bg-zinc-800 group-hover:border-zinc-700 group-hover:text-zinc-200'}
+                      `}
+                      style={{ animationDelay: `${idx * 0.2}s` }}
+                    >
+                      {item.icon}
+                    </div>
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className={`p-2 rounded-full transition-colors
+                        ${item.color === 'blue' ? 'bg-white/10 text-zinc-300 hover:bg-zinc-200 hover:text-black' :
+                          item.color === 'emerald' ? 'bg-white/10 text-zinc-300 hover:bg-zinc-200 hover:text-black' :
+                            item.color === 'purple' ? 'bg-white/10 text-zinc-300 hover:bg-zinc-200 hover:text-black' :
+                              item.color === 'orange' ? 'bg-white/10 text-zinc-300 hover:bg-zinc-200 hover:text-black' :
+                                'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'}
+                      `}>
+                        <ArrowUpRight />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <div className="mb-10">
-                <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">{item.app}</p>
-                <h3 className="text-xl font-bold text-zinc-300 mb-3 group-hover:text-zinc-200 transition-colors">{item.title}</h3>
-                <p className="text-zinc-400 text-sm leading-snug font-medium line-clamp-2">
-                  {item.tagline}
-                </p>
-              </div>
-
-              <div className="mt-auto" />
-
-              <div className="pt-6 border-t border-zinc-900 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp />
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase">Impact</span>
+                  <div className="mb-10">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2">{item.app}</p>
+                    <h3 className="text-xl font-bold text-zinc-300 mb-3 group-hover:text-zinc-200 transition-colors">{item.title}</h3>
+                    <p className="text-zinc-400 text-sm leading-snug font-medium line-clamp-2">
+                      {item.tagline}
+                    </p>
                   </div>
-                  <span className="text-xs font-black text-zinc-300 bg-zinc-900/50 px-3 py-1 rounded-full border border-zinc-800/50">
-                    {item.impact}
-                  </span>
-                </div>
 
-                <div className="flex flex-wrap gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
-                  {item.tools.slice(0, 2).map(t => (
-                    <span key={t} className="text-[9px] font-bold text-zinc-500">#{t}</span>
-                  ))}
-                  {item.tools.length > 2 && <span className="text-[9px] font-bold text-zinc-500">+{item.tools.length - 2}</span>}
-                </div>
-              </div>
+                  <div className="mt-auto" />
 
-              {/* Secret Interaction Hint */}
-              <div className="absolute inset-0 bg-white/[0.01] pointer-events-none" />
-            </motion.div>
-          ))}
-        </div>
+                  <div className="pt-6 border-t border-zinc-900 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp />
+                        <span className="text-[10px] font-bold text-zinc-500 uppercase">Impact</span>
+                      </div>
+                      <span className="text-xs font-black text-zinc-300 bg-zinc-900/50 px-3 py-1 rounded-full border border-zinc-800/50">
+                        {item.impact}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
+                      {item.tools.slice(0, 2).map(t => (
+                        <span key={t} className="text-[9px] font-bold text-zinc-500 font-mono">#{t}</span>
+                      ))}
+                      {item.tools.length > 2 && <span className="text-[9px] font-bold text-zinc-500 font-mono">+{item.tools.length - 2}</span>}
+                    </div>
+                  </div>
+
+                  {/* Secret Interaction Hint */}
+                  <div className="absolute inset-0 bg-white/[0.01] pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
 
         {/* Modal Overlay for Detailed Experience */}
         <AnimatePresence>
@@ -249,13 +365,7 @@ const Experience = () => {
 
                 <div>
                   <div className="flex items-center gap-6 mb-10">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center
-                      ${selectedAchievement.color === 'blue' ? 'text-blue-400 bg-blue-500/5 border border-blue-500/20' :
-                        selectedAchievement.color === 'emerald' ? 'text-emerald-400 bg-emerald-500/5 border border-emerald-500/20' :
-                          selectedAchievement.color === 'purple' ? 'text-purple-400 bg-purple-500/5 border border-purple-500/20' :
-                            selectedAchievement.color === 'orange' ? 'text-orange-400 bg-orange-500/5 border border-orange-500/20' :
-                              'text-zinc-300 bg-white/5 border border-white/10'}
-                    `}>
+                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-zinc-200 bg-white/5 border border-white/10">
                       {selectedAchievement.icon}
                     </div>
                     <div>

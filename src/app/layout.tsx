@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
-const inter = Inter({ subsets: ["latin"] });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+});
 
 export const metadata: Metadata = {
   title: "Vipul Pawar | AI Enthusiast & Developer",
@@ -16,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-gray-50 dark:bg-gray-900`}>
+      <body className={`${bricolage.variable} font-sans`}>
+        <AnimatedBackground />
         {children}
       </body>
     </html>

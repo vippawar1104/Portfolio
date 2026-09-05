@@ -114,6 +114,7 @@ const skills = [
 		category: "APIs",
 		items: [
 			"Integration of APIs with the agent (Groq, OpenAI, Cohere, AssemblyAI, Gemini, ElevenLabs, HuggingFace)",
+				"Gemini Live (Real-time Voice API)",
 		],
 		color: "purple",
 		icon: (
@@ -141,7 +142,7 @@ const skills = [
 	},
 	{
 		category: "Data/Tools",
-		items: ["AWS", "MySQL", "MongoDB", "SQLite", "Postman", "Docker", "Git", "GitHub"],
+		items: ["MySQL", "MongoDB", "SQLite", "Postman", "Docker", "Git", "GitHub", "AWS Bedrock (Model Hosting)"],
 		color: "rose",
 		icon: (
 			<svg
@@ -186,9 +187,10 @@ const Skills = () => {
 					className="text-center mb-16"
 				>
 					{" "}
-					<span className="inline-block px-4 py-2 rounded-full bg-zinc-800 text-zinc-400 text-sm font-medium mb-4">
-						{" "}
-						Expertise{" "}
+					<span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md border border-white/15 bg-white/[0.03] text-zinc-300 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+						<span className="text-zinc-600">[</span>
+						Expertise
+						<span className="text-zinc-600">]</span>
 					</span>{" "}
 					<h2 className="text-3xl sm:text-4xl font-bold text-zinc-300 mb-4">
 						{" "}
@@ -224,19 +226,20 @@ const Skills = () => {
 						>
 							{/* Premium Hover Glow Effect */}
 							<div className="absolute inset-0 bg-gradient-to-br from-zinc-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-							{/* Corner Accent */}
-							<div className="absolute -top-12 -right-12 w-24 h-24 bg-zinc-500/10 rounded-full blur-2xl group-hover:bg-zinc-500/20 transition-all duration-500" />
 							<div className="relative z-10">
 								<div className="flex items-center gap-3 mb-6">
-									<div className={`p-3 rounded-xl shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 text-zinc-300 bg-zinc-800/80
-										${skillGroup.color === 'blue' ? 'group-hover:bg-blue-500/10 group-hover:text-blue-400 group-hover:shadow-[0_0_20px_rgba(59,130,246,0.15)]' :
-											skillGroup.color === 'amber' ? 'group-hover:bg-amber-500/10 group-hover:text-amber-400 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]' :
-												skillGroup.color === 'indigo' ? 'group-hover:bg-indigo-500/10 group-hover:text-indigo-400 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]' :
-													skillGroup.color === 'emerald' ? 'group-hover:bg-emerald-500/10 group-hover:text-emerald-400 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.15)]' :
-														skillGroup.color === 'purple' ? 'group-hover:bg-purple-500/10 group-hover:text-purple-400 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.15)]' :
-															skillGroup.color === 'rose' ? 'group-hover:bg-rose-500/10 group-hover:text-rose-400 group-hover:shadow-[0_0_20px_rgba(244,63,94,0.15)]' :
-																'group-hover:bg-white/10'}
-									`}>
+									<div
+										className={`p-3 rounded-2xl shadow-inner group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 animate-float-slow text-zinc-200 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.18)]
+										${skillGroup.color === 'blue' ? 'bg-gradient-to-br from-zinc-700/70 to-zinc-800/40 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-zinc-700/80' :
+											skillGroup.color === 'amber' ? 'bg-gradient-to-br from-neutral-700/70 to-neutral-800/40 shadow-[0_0_16px_rgba(255,255,255,0.07)] group-hover:bg-neutral-700/80' :
+												skillGroup.color === 'indigo' ? 'bg-gradient-to-br from-stone-700/70 to-stone-800/40 shadow-[0_0_16px_rgba(255,255,255,0.06)] group-hover:bg-stone-700/80' :
+													skillGroup.color === 'emerald' ? 'bg-gradient-to-br from-zinc-600/60 to-zinc-800/40 shadow-[0_0_16px_rgba(255,255,255,0.08)] group-hover:bg-zinc-600/70' :
+														skillGroup.color === 'purple' ? 'bg-gradient-to-br from-neutral-600/60 to-neutral-800/40 shadow-[0_0_16px_rgba(255,255,255,0.08)] group-hover:bg-neutral-600/70' :
+															skillGroup.color === 'rose' ? 'bg-gradient-to-br from-stone-600/60 to-stone-800/40 shadow-[0_0_16px_rgba(255,255,255,0.08)] group-hover:bg-stone-600/70' :
+																'bg-zinc-800/80 group-hover:bg-white/10'}
+									`}
+										style={{ animationDelay: `${index * 0.2}s` }}
+									>
 										{" "}
 										{skillGroup.icon}{" "}
 									</div>{" "}

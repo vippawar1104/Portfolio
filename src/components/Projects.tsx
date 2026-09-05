@@ -90,8 +90,10 @@ const Projects = () => {
           }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 rounded-full bg-zinc-800 text-zinc-400 text-sm font-medium mb-4">
-            My Work{" "}
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md border border-white/15 bg-white/[0.03] text-zinc-300 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            <span className="text-zinc-600">[</span>
+            My Work
+            <span className="text-zinc-600">]</span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-300 mb-4">
             Featured Projects{" "}
